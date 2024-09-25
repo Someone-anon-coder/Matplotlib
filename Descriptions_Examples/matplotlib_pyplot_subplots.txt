@@ -1,0 +1,37 @@
+subplots function of the matplotlib.pyplot library
+This function is used to plot plots within a graph
+
+subplots function is useful to visualize various data graph in a single figure
+
+Example:
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+fig.savefig("Plots/Empty_fig_no_axis.png")
+
+fig, ax = plt.subplots()
+fig.savefig("Plots/fig_with_single_graph.png")
+
+fig, ax = plt.subplots(2, 2)
+fig.savefig("Plots/fig_with_two_by_two_axes.png")
+
+fig, ax = plt.subplot_mosaic([["left", "right-top"], ["left", "right-bottom"]])
+fig.savefig("Plots/fig_with_one_left_two_right_axes.png")
+
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3, 4], [4, 3, 2, 1])
+fig.savefig("Plots/basic_plot.png")
+
+Output:
+Empty_fig_no_axis.png
+fig_with_single_axis.png
+fig_with_two_by_two_axes.png
+fig_with_one_left_two_right_axes.png
+basic_plot.png
+
+This example creates graphs: 
+1) An empty figure with no axis
+2) A figure with a single graph
+3) A figure with 4 graphs 
+4) A figure with 1 left and 2 right graphs
+4) A figure with a single graph and data points representing a downward slanting line

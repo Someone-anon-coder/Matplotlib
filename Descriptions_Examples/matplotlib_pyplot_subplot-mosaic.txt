@@ -1,0 +1,15 @@
+subplot_mosaic function in matplotlib.pyplot library
+This function is used to plot multiple graphs in the figure
+
+subplot_mosaic function is helpful when you want to add graphs to a figure in specifc locations
+
+Example: 
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplot_mosaic([["left", "right-top"], ["left", "right-bottom"]])
+fig.savefig("Plots/fig_with_one_left_two_right_graph.png")
+
+Output:
+Plots/fig_with_one_left_two_right_graph.png
+
+This program creates a figure with one left graph and two right graphs

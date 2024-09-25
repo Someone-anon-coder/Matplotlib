@@ -1,0 +1,19 @@
+plot function of the matplotlib.pyplot library
+This function is used to plot a graph
+
+plot function is useful to get a visual graph of the numbers or arrays
+
+Example:
+import matplotlib.pyplot as plt
+import numpy
+
+x = numpy.linspace(0, 2 * numpy.pi, 200)
+y = numpy.sin(x)
+print(y)
+
+plt.plot(x,y)
+plt.savefig("Plots/basic_sin_plot.png")
+
+Output: Plots/basic_sin_plot.png
+
+In this program plot function is used to create a graph of sine wave with the variables x and y
