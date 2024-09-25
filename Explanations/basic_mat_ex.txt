@@ -1,0 +1,23 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+import numpy
+
+# Using numpy function linspace to create a array
+# linspace creates a array from start to end, inclusive of start and end
+# Array starting from 0 to 2 times pi with 200 elements
+# It looks like this [0.  0.0315738  0.06314759  0.09472139  0.12629518  0.15786898  ...  6.28318531]
+x = numpy.linspace(0, 2 * numpy.pi, 200)
+
+# Using numpy function sin to create a array
+# It looks like this [0.00000000e+00  3.15685498e-02  6.31056313e-02  9.45798078e-02  ...  -2.44929360e-16]
+y = numpy.sin(x)
+
+# Plotting the graph using pylot function plot
+# It plots a graph with x and y values
+plt.plot(x,y)
+
+# Saving the created graph in a file
+plt.savefig("Plots/basic_sin_plot.png")

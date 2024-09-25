@@ -1,0 +1,17 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating a list of 4 integer values for x and y axis
+x_axis = [1, 2, 3, 4]
+y_axis = [4, 3, 2, 1]
+
+# Creating a figure and axis object using subplots
+fig, ax = plt.subplots()
+
+# Plotting the graph using axix object
+# It plots a graph with x and y values
+ax.plot(x_axis, y_axis)
+
+# Saving the created graph in a file
+fig.savefig("Plots/basic_plot.png")
