@@ -2,6 +2,10 @@
 # Saving the libraries as plt in memory
 import matplotlib.pyplot as plt
 
+# Importing numpy library
+# Saving it as np in memory
+import numpy as np
+
 # Creating a Empty figure no axes and saving it
 fig = plt.figure()
 fig.savefig("Plots/Empty_fig_no_graph.png")
@@ -30,3 +34,25 @@ fig.savefig("Plots/fig_with_two_by_two_graph.png")
 # Creating a figure with 1 left side graph and 2 right side graphs and saving it
 fig, ax = plt.subplot_mosaic([["left", "right-top"], ["left", "right-bottom"]])
 fig.savefig("Plots/fig_with_one_left_two_right_graph.png")
+
+# Creating a array of 0 to PI with 100 elements
+x1 = np.linspace(0, 2 * np.pi, 100)
+
+# Creating sine wave of x1 as y1 points
+y1 = np.sin(x1)
+
+# Creating a array of 0 to PI with 100 elements
+x2 = np.linspace(0, 2 * np.pi, 100)
+
+# Creating cosine wave of x2 as y2 points
+y2 = np.cos(x2)
+
+# Creating a figure with two horizontal graphs
+fig, (ax1, ax2) = plt.subplots(2, 1)
+
+# ploting sine wave and cosine wave
+ax1.plot(x1, y1)
+ax2.plot(x2, y2)
+
+# Saving the figure
+fig.savefig("Plots/fig_with_sine_cosine_graph.png")
