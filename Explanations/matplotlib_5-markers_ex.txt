@@ -1,0 +1,22 @@
+# Import matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating plot data as x and y
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+# Plotting the data with marker 'o'
+plt.plot(x, y, marker="o")
+
+# Plotting the data with marker 'x'
+plt.plot(x, [y_i-1 for y_i in y], marker="x")
+
+# Plotting the data with marker '^'
+plt.plot(x, [y_i-3 for y_i in y], marker="s")
+
+# Plotting the data with marker '+', markersize as 10, markerfacecolor as red and markeredgecolor as blue
+plt.plot(x, [y_i+1 for y_i in y], marker="s", markersize=10, markerfacecolor="red", markeredgecolor="blue")
+
+# Saving the plot
+plt.savefig("Plots/fig_with_markers.png")

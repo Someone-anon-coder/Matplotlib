@@ -17,3 +17,58 @@ plt.savefig("Plots/basic_sin_plot.png")
 Output: Plots/basic_sin_plot.png
 
 In this program plot function is used to create a graph of sine wave with the variables x and y
+
+The linestyle parameter defines the style of line
+Supported styles are '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
+
+Example: 
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y, linestyle="-")
+plt.plot(x, [y_i-1 for y_i in y], linestyle="--")
+plt.savefig("Plots/fig_with_linestyles.png")
+
+Output: Plots/fig_with_linestyles.png
+
+In this program two plots are plotted one with straight solid line and other with dashed line
+
+The color parameter in plot function defines the color of the line
+Supported colors are single character values like 'r', 'g', full names like 'red', 'green', hex values like '#FF5733', RGB values like (0, 1, 0)
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y, color="blue")
+plt.plot(x, [y_i-1 for y_i in y], color="r")
+
+plt.savefig("Plots/fig_with_colors.png")
+
+Output: Plots/fig_with_colors.png
+
+In this program two plots are plotted one with blue color and other with red color
+
+The marker, markersize, markerfacecolor and markeredgecolor are parameter that define the visualization of data points
+marker supports Circle ('o'), Square ('s'), Triangle up ('^'), Cross ('x'), Diamond ('D'), Plus sign ('+')
+markersize support float values and specifies size of marker
+markerfacecolor support color values and specifies inside color of marker
+markeredgecolor support color values and specifies outside color of marker
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y, marker="s", markersize=10, markerfacecolor="red", markeredgecolor="blue")
+
+plt.savefig("Plots/fig_with_markers.png")
+
+Output: Plots/fig_with_markers.png
+
+In this program square markers are created with size 10, inside color red and outside color blue

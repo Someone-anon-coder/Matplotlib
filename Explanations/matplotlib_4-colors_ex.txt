@@ -1,0 +1,22 @@
+# Importing matplotlib.pyplot
+# Saving it as plt in memory
+import matplotlib.pyplot as plt
+
+# Creating plot points arrays as x and y
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+# Plotting the points with blue color line
+plt.plot(x, y, color="blue")
+
+# Plotting the points with red color line
+plt.plot(x, [y_i-1 for y_i in y], color="r")
+
+# Plotting the points with orange color line
+plt.plot(x, [y_i-2 for y_i in y], color="#FF5733")
+
+# Plotting the points with green color line
+plt.plot(x, [y_i-3 for y_i in y], color=(0, 1, 0))
+
+# Saving the plot
+plt.savefig("Plots/fig_with_colors.png")
