@@ -1,0 +1,18 @@
+savefig function in the matplotlib.pyplot library
+This function is used save the created plot
+
+This function is useful when you want to see the plots even after the program ends and perform visual analysis afterwards
+
+Example:
+import matplotlib.pyplot as plt
+import numpy
+
+x = numpy.linspace(0, 2 * numpy.pi, 200)
+y = numpy.sin(x)
+
+plt.plot(x,y)
+plt.savefig("Plots/basic_sin_plot.png")
+
+Output: Plots/basic_sin_plot.png
+
+In this program a plot of sine wave is created and the plot is saved in the Plots folder

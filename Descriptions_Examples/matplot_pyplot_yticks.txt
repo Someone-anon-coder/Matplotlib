@@ -1,0 +1,39 @@
+yticks function of the matplotlib.pyplot library
+This function is used to manipulate the ticks (data labels) on y-axis
+
+This function is useful to customize data labels on y axis by showing only required, coloring them or rotating
+
+Example: 
+import matplotlib.pyplot as plt
+
+x = [i for i in range(1, 11)]
+y = x[::-1]
+
+plt.plot(x, y)
+plt.yticks([1, 5, 9])
+plt.savefig("Plots/fig_with_number_ticks.png")
+
+Output: Plots/fig_with_number_ticks.png
+
+In this program x and y data is plotted and only 1, 5, 9 data labels are shown on y-axis and fig is saved
+
+The ticks parameter is used to define the numeric data labels to show on y axis. The supported values are arraylike
+The lables parameter is used to define the string version of data labels to show on y axis. The supported values are arraylike. You need ticks parameter to use this.
+The fontsize parameter is used to set the size of the font of data labels.
+The color parameter is used to set the color of the data labels.
+You can provide a empty array to ticks parameter to hide the data labels.
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [i for i in range(1, 11)]
+y = x[::-1]
+
+plt.plot(x, y)
+
+plt.yticks([10, 8, 6, 4, 2], labels=["Ten", "Eight", "Six", "Four", "Two"], fontsize=10, color="green", rotation=0)
+plt.savefig("Plots/fig_with_font_color_ticks.png")
+
+Output: Plots/fig_with_font_color_ticks.png
+
+In this program string ticks are created at even positions between 1 and 10 with fontsize 10 and red color on y-axis and fig is saved

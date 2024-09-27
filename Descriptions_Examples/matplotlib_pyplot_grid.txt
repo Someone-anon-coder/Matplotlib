@@ -1,0 +1,41 @@
+grid function of the matplotlib.pyplot library
+This function is useful to draw a grid on the plot
+
+This function is useful to better see the points on the plot
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y)
+
+# Turning on the grid and saving the plot
+plt.grid(True)
+plt.savefig("Plots/fig_with_grid.png")
+
+Output: Plots/fig_with_grid.png
+
+In this program a fig with x and y points plot with grid is saved
+
+The visible parameter is used to determine whether to show the grid or not. The supported values are "True" and "False"
+The axis parameter is used to determine to show grid for which axis. The supported values are 'x', 'y' and 'both'
+The linestyles parameter is used to set the style of the line of grid. The supported values are '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
+The color parameter is used to set the color of the grid. The supported values are 'blue', 'green', ...
+The alpha parameter is used to set the transparency of the grid. The supported values are between 0 and 1
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y)
+plt.grid(True, axis='both', linestyle='--', color='red', alpha=0.5)
+
+plt.savefig("Plots/fig_with_grid_both_dashed_red.png")
+
+Output: Plots/fig_with_grid_both_dashed_red.png
+
+In this program a fig with x and y points plot with grid is saved. The grid is on both axis with dashed style and red color with 50% transparency
