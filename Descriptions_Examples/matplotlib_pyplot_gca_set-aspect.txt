@@ -1,0 +1,19 @@
+The set_aspect function of the matplotlib.pyplot.gca module
+This function is used to set the aspect ratio of the axes
+
+This function is useful to set the aspect ratio of the individual axes or set a custom axis ratio
+
+Example: 
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+plt.plot(x, y)
+plt.gca().set_aspect('equal')
+
+plt.savefig("Plots/fig_with_equal_aspect.png")
+
+Output: Plots/fig_with_equal_aspect.png
+
+This program creates a equal aspect ratio for x and y axis data

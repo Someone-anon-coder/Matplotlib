@@ -1,0 +1,37 @@
+autoscale function of the matplotlib.pyplot library
+This function is used to set the auto scaling of the axes data
+
+This function is useful to set auto scaling for specific axes or both or none
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+plt.plot(x, y)
+plt.autoscale(enable=True)
+
+plt.savefig("Plots/fig_with_autoscale.png")
+
+Output: Plots/fig_with_autoscale.png
+
+This program plots x and y data points and set autoscale true.
+
+The enable parameter is used to enable or disable the autoscale for plot axes
+The axis parameter is used to set the specific axis for autoscale or both axis
+
+Example: 
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+plt.plot(x, y)
+plt.autoscale(enable=True, axis='x')
+
+plt.savefig("Plots/fig_with_x_autoscale.png")
+
+Output: Plots/fig_with_x_autoscale
+
+This program plots x and y data points on the plot and sets autoscale true for x axis only.

@@ -1,0 +1,46 @@
+# Importing matplotlib.pyplot
+# Setting it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating linear plot data points with same range with x and y
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+# Plotting the data points
+plt.plot(x, y)
+
+# Setting limits for x and y axis to only display data between 2 and 4
+plt.xlim([2, 4])
+plt.ylim([2, 4])
+
+# Saving the plot
+plt.savefig("Plots/fig_with_xlim_ylim.png")
+
+# Setting limits for x and y axis in reverse direction of axes
+plt.xlim([5, 2])
+plt.ylim([2, 5])
+
+# Saving the plot
+plt.savefig("Plots/fig_with_xlim_ylim_reversed.png")
+
+# Setting the autoscale to False to not scale the plot
+plt.autoscale(False)
+plt.xlim([2, 4])
+plt.ylim([5, 2])
+plt.savefig("Plots/fig_with_no_autoscale.png")
+
+# Setting the autoscale to True to scale the plot
+plt.autoscale(True)
+
+# Creating different ranges of values for x and y
+x = [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+y = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+# Plotting the data points
+plt.plot(x, y)
+
+# Setting aspect ratio to 1 to make the plot square
+plt.gca().set_aspect('equal')
+
+# Saving the plot
+plt.savefig("Plots/fig_with_equal_aspect_tight_layout.png")

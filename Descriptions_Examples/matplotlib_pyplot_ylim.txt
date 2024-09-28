@@ -1,0 +1,19 @@
+ylim function of the matplotlib.pyplot module
+This function creates a limit for data points on the axes
+
+This function is used to zoom in to the plot to focus on the data points in the plot
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5, 4, 3, 2, 1]
+
+plt.plot(x, y)
+plt.ylim([4, 2])
+
+plt.savefig("Plots/fig_with_ylim.png")
+
+Output: Plots/fig_with_ylim.png
+
+This program plots data points x and y. The ylim sets a limit on points between 4 and 2 to zoom in on the plot
