@@ -1,0 +1,32 @@
+tight_layout function of the matplotlib.pyplot library
+This function is used to avoid overlapping of plots
+
+This function is useful to create a visually appealing plot
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3]
+y1 = [4, 5, 6]
+y2 = [7, 8, 9]
+y3 = [10, 11, 12]
+y4 = [13, 14, 15]
+
+plt.subplot(2, 2, 1)
+plt.plot(x, y1)
+
+plt.subplot(2, 2, 2)
+plt.plot(x, y2)
+
+plt.subplot(2, 2, 3)
+plt.plot(x, y3)
+
+plt.subplot(2, 2, 4)
+plt.plot(x, y4)
+
+plt.tight_layout()
+plt.savefig('Plots/plot.png')
+
+Output: Plots/plot.png
+
+In this program subplots are created and tight_layout is used to properly arrange the plots and save the figure
