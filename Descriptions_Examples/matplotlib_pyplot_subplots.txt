@@ -36,33 +36,32 @@ This example creates graphs:
 4) A figure with 1 left and 2 right graphs
 4) A figure with a single graph and data points representing a downward slanting line
 
-The parameter nrows is used to define the number of rows in the plot
-The parameter ncols is used to define the number of columns in the
-The parameter index is used to define which index to plot
+The parameter nrows is used to define the number of rows
+The parameter ncols is used to define the number of columns
+The parameter sharex is used to define the plot to share x axis
+The parameter sharey is used to define the plot to share y
+The parameter figsize is used to define the size of the figure
 
-Example:
+Example: 
 import matplotlib.pyplot as plt
 
-x = [1, 2, 3]
-y1 = [4, 5, 6]
-y2 = [7, 8, 9]
-y3 = [10, 11, 12]
-y4 = [13, 14, 15]
+fig, ax = plt.subplots(2, 2, sharex=True, sharey=True, figsize=(8, 6))
 
-plt.subplot(2, 2, 1)
-plt.plot(x, y1)
+ax[0, 0].plot([1, 2, 3], [1, 4, 9])
+ax[0, 0].set_title("Plot 1")
 
-plt.subplot(2, 2, 2)
-plt.plot(x, y2)
+ax[0, 1].plot([1, 2, 3], [1, 2, 3])
+ax[0, 1].set_title("Plot 2")
 
-plt.subplot(2, 2, 3)
-plt.plot(x, y3)
+ax[1, 0].plot([1, 2, 3], [2, 3, 4])
+ax[1, 0].set_title("Plot 3")
 
-plt.subplot(2, 2, 4)
-plt.plot(x, y4)
+ax[1, 1].plot([1, 2, 3], [3, 5, 7])
+ax[1, 1].set_title("Plot 4")
 
-plt.savefig('Plots/plot.png')
+plt.tight_layout()
+plt.savefig("Plots/fig_with_multiple_custom_subplots.png")
 
-Output: Plots/plot.png
+Output: fig_with_multiple_custom_subplots.png
 
-In this program subplot function is used to create 2x2 subplots and create plots in each and save the figure
+In this program a plot with 4 subplots is created. The points are plotted in each subplots. The x and y are shared and size of the figure is set to 8 by 6. The figure is saved.

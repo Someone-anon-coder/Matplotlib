@@ -1,0 +1,35 @@
+subplot function of the matplotlib.pyplot library
+This function is used to plot plots within a graph
+
+This function is useful to visualize various data graph in a single figure
+
+The parameter nrows is used to define the number of rows in the plot
+The parameter ncols is used to define the number of columns in the
+The parameter index is used to define which index to plot
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3]
+y1 = [4, 5, 6]
+y2 = [7, 8, 9]
+y3 = [10, 11, 12]
+y4 = [13, 14, 15]
+
+plt.subplot(2, 2, 1)
+plt.plot(x, y1)
+
+plt.subplot(2, 2, 2)
+plt.plot(x, y2)
+
+plt.subplot(2, 2, 3)
+plt.plot(x, y3)
+
+plt.subplot(2, 2, 4)
+plt.plot(x, y4)
+
+plt.savefig('Plots/plot.png')
+
+Output: Plots/plot.png
+
+In this program subplot function is used to create 2x2 subplots and create plots in each and save the figure

@@ -1,0 +1,26 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating subplots with 2 rows and 2 columns and sharing the x and y axes with figure size 8x6
+fig, ax = plt.subplots(2, 2, sharex=True, sharey=True, figsize=(8, 6))
+
+# Creating plot points and plotting them in the first subplot
+ax[0, 0].plot([1, 2, 3], [1, 4, 9])
+ax[0, 0].set_title("Plot 1")
+
+# Creating plot points and plotting them in the second subplot
+ax[0, 1].plot([1, 2, 3], [1, 2, 3])
+ax[0, 1].set_title("Plot 2")
+
+# Creating plot points and plotting them in the third subplot
+ax[1, 0].plot([1, 2, 3], [2, 3, 4])
+ax[1, 0].set_title("Plot 3")
+
+# Creating plot points and plotting them in the fourth subplot
+ax[1, 1].plot([1, 2, 3], [3, 5, 7])
+ax[1, 1].set_title("Plot 4")
+
+# Adjusting the spacing between subplots and saving the figure
+plt.tight_layout()
+plt.savefig("Plots/fig_with_multiple_custom_subplots.png")
