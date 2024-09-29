@@ -72,3 +72,19 @@ plt.savefig("Plots/fig_with_markers.png")
 Output: Plots/fig_with_markers.png
 
 In this program square markers are created with size 10, inside color red and outside color blue
+
+The label parameter is used to label the particular plot in the figure
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = x[::-1]
+
+plt.plot(x, y, label="y = reverse(x)")
+
+plt.savefig("Plots/fig_with_reverse_function.png")
+
+Output: Plots/fig_with_reverse_function.png"
+
+In this program plot with x and y is created where y is reverse of x and label is y = reverse(x) and plot is saved

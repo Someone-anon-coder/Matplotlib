@@ -1,0 +1,23 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating plot data points x
+x = [1, 2, 3, 4, 5]
+
+# Creating plot data points y as squares, cubes and reverse of x
+y1 = [i*i for i in x]
+y2 = [i*i*i for i in x]
+y3 = x[::-1]
+
+# Plotting the data points, squares as dashed line and blue color
+plt.plot(x, y1, label="y = x^2", linestyle='--', color='blue')
+
+# Plotting the data points, cubes as solid line and green color
+plt.plot(x, y2, label="y = x^3", linestyle='-', color='green')
+
+# Plotting the data points, reverse of x as dotted line and red color
+plt.plot(x, y3, label="y = reverse(x)", linestyle=':', color='red')
+
+# Saving the plot
+plt.savefig("Plots/fig_with_multiple_lines.png")
