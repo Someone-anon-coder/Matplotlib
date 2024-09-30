@@ -1,0 +1,32 @@
+add_subplot function of the matplotlib.pyplot.figure module
+This function is used to get a axes object to manipulate plots on the figure
+
+This function is useful to create non-linear custom size plots on the figure
+
+Example:
+import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
+
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 9, 16, 25]
+y2 = [1, 8, 27, 64, 125]
+y3 = x[::-1]
+
+fig = plt.figure(figsize=(8,6))
+gs = gridspec.GridSpec(2, 2)
+
+ax1 = fig.add_subplot(gs[0, :])
+ax2 = fig.add_subplot(gs[1, 0])
+ax3 = fig.add_subplot(gs[1, 1])
+
+ax1.plot(x, y1)
+ax2.plot(x, y2)
+ax3.plot(x, y3)
+
+plt.tight_layout()
+plt.savefig("Plots/figure.png")
+
+# Output: Plots/figure.png
+
+In this program a figure of 8 by 6 size and a grid with 2 rows and 2 rows is created. The first plot is plotted on the entire 1st row.
+The second plot is plotted on the second row first coloum and third plot on second row second coloum and figure is saved
