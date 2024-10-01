@@ -1,0 +1,35 @@
+scatter function of the matplotlib library
+This function is used to create plots with scattered data points rather than linear data
+
+This function is useful when you want to plot non-linear data
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 4, 7, 15, 22]
+y = [2, 6, 9, 14, 21]
+
+plt.scatter(x, y)
+plt.savefig("Plots/scatter.png")
+
+Output: Plots/scatter.png
+
+In this program non-linear data points x and y are plotted with the help of scatter function
+
+The parameter s defines the size of the points
+The parameter c defines the color of the data points
+The parameter marker is used to define the marker used to indicate the data points
+The parameter alpha is used to define the transparency of the data points shown in the plot
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 4, 7, 15, 22]
+y = [2, 6, 9, 14, 21]
+
+plt.scatter(x, y, s=100, c='red', marker='o', alpha=0.5)
+plt.savefig("Plots/scatter.png")
+
+Output: Plots/scatter.png
+
+This program create data points x and y and plots them with size of 100 and red color and shown with 'o' marker and transparency of 0.5
