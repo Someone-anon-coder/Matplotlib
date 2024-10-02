@@ -1,0 +1,25 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Defining categories for the bar chart
+categories = ['A', 'B', 'C', 'D']
+
+# Defining values for categories
+values = [10, 15, 8, 20]
+
+# Plotting bar chart with categories and values
+plt.bar(categories, values)
+
+# Saving the figure with bar chart
+plt.savefig("Plots/bar_chart.png")
+
+# Plotting additional categories
+x = ['ABC', 'PQR', 'DEF', 'XYZ']
+
+# Plotting heights for additional categories
+height = [10, 7, 17, 13]
+
+# Plotting bar chart with additional categories and saving the figure
+plt.bar(x, height=height, width=0.5, color='green')
+plt.savefig("Plots/bar_plot_width_color.png")

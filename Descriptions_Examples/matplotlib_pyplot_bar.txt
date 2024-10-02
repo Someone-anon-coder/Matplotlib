@@ -1,0 +1,35 @@
+bar function of the matplotlib.pyplot library
+This function is used to create bar chart in matplotlib
+
+This function is useful when you want to display data overtime, like growth or sales over months or years
+
+Example:
+import matplotlib.pyplot as plt
+
+x = ['A', 'B', 'C']
+y = [10, 12, 8]
+
+plt.bar(x, y)
+plt.savefig("Plots/bar_chart.png")
+
+Output: Plots/bar_chart.png
+
+This program plots the categories x with the heights y and saves the figure
+
+The parameter x is used to define the categories in the bar chart on x-axis
+The parameter height is used to define the values for the categories
+The parameter width is used to define the width of the bar
+The parameter color is used to define the color of the bar
+
+Example:
+import matplotlib.pyplot as plt
+
+x = ['ABC', 'PQR', 'DEF', 'XYZ']
+height = [10, 7, 17, 13]
+
+plt.bar(x, height=height, width=0.5, color='green')
+plt.savefig("Plots/bar_plot_width_color.png")
+
+Output: Plots/bar_plot_width_color.png
+
+This program plots the categories x with height height with 0.5 width and green color, and saves the figure
