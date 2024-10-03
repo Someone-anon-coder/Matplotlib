@@ -1,0 +1,38 @@
+hist function of the matplotlib.pyplot module.
+This function is used to create plot of data frequency
+
+This function is useful to plot data that has a frequency of occurance
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 2, 3, 3, 3]
+plt.hist(x, bins=3)
+
+plt.savefig("Plots/fig_with_histogram.png")
+plt.clf()
+
+Output: Plots/fig_with_histogram.png
+
+This program create a histogram of the data frequency x and saves the figure and clears the plot
+
+The bins parameter specifies the number of max frequency occurance of the data
+The color parameter define the color of the histogram bar
+The edgecolor parameter define the color of the edge of the histogram bar
+The density parameter normalizes the histogram data area to be equal 1
+The cumulative parameter creates a cumulative histogram
+
+Example:
+import matplotlib.pyplot as plt
+import numpy as np
+
+data = np.random.randn(1000)
+
+plt.hist(data, bins=30, color='green', edgecolor='black', density=True, cumulative=True)
+
+plt.savefig("Plots/fig_with_histogram_color.png")
+plt.clf()
+
+Output: Plots/fig_with_histogram_color.png
+
+This program creates a histogram of data frequency of 1000 random numbers. The histogram bar is colored green with edge color black. The histogram is normalized and cumulative to the data. The program saves the figure and clears the plot
