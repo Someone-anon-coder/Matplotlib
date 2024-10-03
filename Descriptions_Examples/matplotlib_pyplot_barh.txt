@@ -1,0 +1,34 @@
+barh function of the matplotlib.pyplot library
+This function is used to create horizontal bar chart
+
+This function is useful to plot data that grows overtime rather than points on the plot
+
+Example:
+import matplotlib.pyplot as plt
+
+y = ["A", "B", "C"]
+width = [10, 5, 15]
+
+plt.barh(y, width)
+plt.savefig("Plots/bar_horizontal_chart.png")
+
+Output: Plots/bar_horizontal_chart.png
+
+This program creates a horizontal bar chart with categories x and values width and saves the figure
+
+The parameter height is used to define the thickness of the bar
+The parameter color is used to define the color of the bar
+The parameter alpha is used to define the transparency of the bar
+
+Example:
+import matplotlib.pyplot as plt
+
+categories = ["ABC", "PQR", "DEF", "XYZ"]
+values = [22, 17, 5, 12]
+
+plt.barh(categories, values, height=0.5, color='green', alpha=0.7)
+plt.savefig("Plots/bar_horizontal_chart_width_color.png")
+
+Output: Plots/bar_horizontal_chart_width_color.png
+
+This program creates a bar chart with categories and values with a thickness of 0.5 in green color and transparency as 0.7

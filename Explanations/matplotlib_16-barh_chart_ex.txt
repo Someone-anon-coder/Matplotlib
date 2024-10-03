@@ -1,0 +1,19 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating categories for the horizontal bar chart and values
+y = ["A", "B", "C", "D"]
+width = [10, 7, 17, 13]
+
+# Plotting the horizontal bar chart and saving the figure
+plt.barh(y, width)
+plt.savefig("Plots/bar_horizontal_chart.png")
+
+# Creating new categories and values for the horizontal bar chart
+categories = ["ABC", "PQR", "DEF", "XYZ"]
+values = [22, 17, 5, 12]
+
+# Plotting the new horizontal bar chart with a height of 0.5 and a green color with a transparency of 0.7 and saving the figure
+plt.barh(categories, values, height=0.5, color='green', alpha=0.7)
+plt.savefig("Plots/bar_horizontal_chart_width_color.png")
