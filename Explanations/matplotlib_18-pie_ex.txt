@@ -1,0 +1,38 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating slice sizes for pie chart
+sizes = [15, 30, 45, 20]
+
+# Creating labels for pie chart
+labels = ["A", "B", "C", "D"]
+
+# Creating pie chart with autopct as percentage
+plt.pie(sizes, labels=labels, autopct="%1.1f%%")
+
+# Setting the aspect ratio to equal to make pie chart a circle
+plt.axis('equal')
+
+# Saving the pie chart and clearing the plot
+plt.savefig("Plots/pie_chart.png")
+plt.clf()
+
+# Creating slice sizes for pie chart
+sizes = [10, 5, 15, 45, 25]
+
+# Creating labels for pie chart
+labels = ["Ten", "Five", "Fifteen", "Forty Five", "Twenty Five"]
+
+# Creating colors for pie chart
+colors = ["red", "green", "orange", "blue", "yellow"]
+
+# Creating pie chart with explode and shadow and startangle as 90 degrees
+plt.pie(sizes, explode=(0, 0.2, 0, 0, 0), labels=labels, colors=colors, autopct="%1.1f%%", startangle=90, shadow=True)
+
+# Setting the aspect ratio to equal to make pie chart a circle
+plt.axis('equal')
+
+# Saving the pie chart and clearing the plot
+plt.savefig("Plots/pie_chart_custom.png")
+plt.clf()

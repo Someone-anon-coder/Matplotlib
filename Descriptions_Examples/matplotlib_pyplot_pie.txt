@@ -1,0 +1,44 @@
+pie function in the matplotlib.pyplot library
+This function is used to create pie charts for the data
+
+This function is useful when you want to create plot for relative data with different sizes
+
+Example:
+import matplotlib.pyplot as plt
+
+sizes = [30, 40, 30]
+labels = ["A", "B", "C"]
+
+plt.pie(sizes, labels=labels)
+
+plt.savefig("Plots/pie_chart.png")
+plt.clf()
+
+Output: Plots/pie_chart.png
+
+This program creates pie chart for data A, B and C and saves figure and clears the plot
+
+The labels parameter defines the labels for each slice in the pie
+The explode parameters defines how much to shift a slice outside of the pie
+The colors parameter defines color for each of the slice
+The autopct parameter defines the format of string to display on the slice
+The startangle parameter define the degree at which to start the slice of pie
+The shadow parameter defines to whether to add shadow or not to the pie
+
+Example:
+import matplotlib.pyplot as plt
+
+sizes = [10, 5, 15, 45, 25]
+labels = ["Ten", "Five", "Fifteen", "Forty Five", "Twenty Five"]
+colors = ["red", "green", "orange", "blue", "yellow"]
+
+plt.pie(sizes, explode=(0, 0.2, 0, 0, 0), labels=labels, colors=colors, autopct="%1.1f%%", startangle=90, shadow=True)
+plt.axis('equal')
+
+plt.savefig("Plots/pie_chart_custom.png")
+plt.clf()
+
+Output: Plots/pie_chart_custom.png
+
+This program creates pie chart for data Ten, Five, Fifteen, Forty Five and Twenty Five. The slice Five is exploded by 0.2, the colors define the colors of the slice.
+The string format of the slice is set to 1 decimal place and slice starts at the angle 90 and pie chart has a shadow. This program saves figure and clears the plot
