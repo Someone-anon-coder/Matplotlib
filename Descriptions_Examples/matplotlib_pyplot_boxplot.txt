@@ -1,0 +1,40 @@
+The boxplot function of the matplotlib.pyplot library
+This function is used to plot boxplot for the data
+
+This function is useful to plot the distribution of data and find the outliers in the data
+
+Example:
+import matplotlib.pyplot as plt
+
+data = [1, 2, 19, 20, 21, 39, 40, 77]
+
+plt.boxplot(data)
+
+plt.savefig("Plots/fig_with_boxplot.png")
+plt.clf()
+
+Output: Plots/fig_with_boxplot.png
+
+This program plots data from low bound 1 and high bound 40 with a outlier 77. This program saves the figure and clears the plot
+
+The paramter vert defines whether to plot data horizontally or vertically
+The paramter patch_artist defines whether to fill the box in color
+The paramter notch defines if the box will have notch to indicate confidence level of distributed data in the box
+The paramter showmeans defines whether to show the mean data point of the data
+
+Example:
+import matplotlib.pyplot as plt
+
+new_data = [26, 61, 62, 79, 80, 81, 99, 100]
+
+plt.boxplot(new_data, vert=False, patch_artist=True, notch=True, showmeans=True)
+
+plt.savefig("Plots/fig_with_boxplot_custom.png")
+plt.clf()
+
+Output: Plots/fig_with_boxplot_custom.png
+
+This program plots data from low bound 61 and high bound 100 with a outlier 26. 
+The program is plotted horizontally with box color filled
+Notches are shown to indicate confidence in box plot data and mean point is shown in the plot
+This program saves the figure and clears the plot.
