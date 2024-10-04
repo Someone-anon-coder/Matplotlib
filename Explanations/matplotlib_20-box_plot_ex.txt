@@ -1,0 +1,31 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Plotting data from low bound 1 and high bound 40
+# The box data is bound between 15 and 38
+# The box whiskers are on points 2 and 39
+# The data is plotted with individual outlier 77
+# The outlier is calculated with `low_bound - 1.5 * IQR` and `high_bound + 1.5 * IQR`. Where IQR is Inter Quartile Range (high_bound - low_bound)
+data = [1, 2, 19, 20, 21, 39, 40, 77]
+
+# The boxplot is plotted with data
+plt.boxplot(data)
+
+The figure is saved and plot is cleared
+plt.savefig("Plots/fig_with_boxplot.png")
+plt.clf()
+
+# Plotting data from low bound 61 and high bound 100
+# The box data is bound between 62 and 85
+# The box whiskers are on points 61 and 100
+# The data is plotted with individual outlier 26
+# The outlier is calculated with `low_bound - 1.5 * IQR` and `high_bound + 1.5 * IQR`. Where IQR is Inter Quartile Range (high_bound - low_bound)
+new_data = [26, 61, 62, 79, 80, 81, 99, 100]
+
+# The boxplot is plotted with data. With color and notches set. And mean point is shown as 73
+plt.boxplot(new_data, patch_artist=True, notch=True, showmeans=True)
+
+The figure is saved and plot is cleared
+plt.savefig("Plots/fig_with_boxplot_custom.png")
+plt.clf()
