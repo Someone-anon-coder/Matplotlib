@@ -1,0 +1,36 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Creating linear non-error data
+x = [1, 2, 3, 4, 5]
+
+# Creating data with error
+y = [5.1, 4.2, 2.9, 1.8, 1.1]
+
+# Allowable error values within y-axis
+yerr = [0.1, 0.2, 0.1, 0.2, 0.1]
+
+# Plotting the errorbar with data x and y with allowable y error values
+plt.errorbar(x, y, yerr=yerr)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_errorbar.png")
+plt.clf()
+
+# Creating linear error data x and allowable error x values
+x = [0.9, 1.8, 2.7, 3.6, 4.5, 5.5, 6.6, 7.7, 8.8, 9.9]
+xerr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2, 0.1]
+
+# Creating linear error data y and allowable error y values
+y = [1.1, 2.2, 3.3, 4.4, 5.5, 6.5, 7.4, 8.3, 9.2, 10.1]
+yerr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2, 0.1]
+
+# Plotting the errorbar with data x and y with allowable x and y error values.
+# Error points shown with marker 'o' and color 'red'
+# Error points have size of caps 5 and width of error lines 2
+plt.errorbar(x, y, yerr=yerr, xerr=xerr, fmt='o', ecolor='red', capsize=5, elinewidth=2)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_errorbar_custom.png")
+plt.clf()

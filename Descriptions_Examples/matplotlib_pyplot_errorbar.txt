@@ -1,0 +1,48 @@
+errorbar function of the matplotlib.pyplot module.
+This function is used to plot data with allowable error values present
+
+This function is useful to plot data to indicate uncertainty with the values
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 2, 3, 4, 5]
+y = [5.1, 4.2, 2.9, 1.8, 1.1]
+yerr = [0.1, 0.2, 0.1, 0.2, 0.1]
+
+plt.errorbar(x, y, yerr=yerr)
+
+plt.savefig("Plots/fig_with_errorbar.png")
+plt.clf()
+
+Output: Plots/fig_with_errorbar.png
+
+This program plots data x and data y with allowable error as yerr. This program saves the figure and clears the plot
+
+The yerr parameter is used to define the allowable error values of y-axis data points
+The xerr parameter is used to define the allowable error values of x-axis data points
+The fmt parameter is used to define the string format for the marker to show the data points
+The ecolor parameter is used to define the color of the error data points
+The capsize parameter is used to define the size of the error bars
+The elinewidth parameter is used to define the width of the error bars
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [0.9, 1.8, 2.7, 3.6, 4.5, 5.5, 6.6, 7.7, 8.8, 9.9]
+xerr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2, 0.1]
+
+y = [1.1, 2.2, 3.3, 4.4, 5.5, 6.5, 7.4, 8.3, 9.2, 10.1]
+yerr = [0.1, 0.2, 0.3, 0.4, 0.5, 0.5, 0.4, 0.3, 0.2, 0.1]
+
+plt.errorbar(x, y, yerr=yerr, xerr=xerr, fmt='o', ecolor='red', capsize=5, elinewidth=2)
+
+plt.savefig("Plots/fig_with_errorbar_custom.png")
+plt.clf()
+
+Output: Plots/fig_with_errorbar_custom
+
+This program plots data x and data y with allowable error as xerr and yerr. 
+Error points shown with marker 'o' and color 'red'
+Error points have size of caps 5 and width of error lines 2
+This program saves the figure and clears the plot
