@@ -1,0 +1,43 @@
+imshow function of the matplotlib.pyplot module
+This function is used to create heatmaps of data
+
+This function is useful to visualize data in color matrix format
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [
+    [1, 2, 3, 4, 5], 
+    [6, 7, 8, 9, 10], 
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25]
+]
+
+plt.imshow(x, cmap='hot')
+
+plt.savefig("Plots/fig_with_heatmap.png")
+plt.clf()
+
+Output: Plots/fig_with_heatmap.png
+
+This program visualizes a heatmap of 5x5 matrix data x with hot colormap. This program saves the figure and clears the plot
+
+The parameter cmap is used to specify the colormap to use
+The parameter interpolation is used to specify the interpolation method to use
+The parameter aspect is used to specify the aspect ratio of the plot
+
+Example:
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.rand(5, 5)
+
+plt.imshow(x, cmap='coolwarm', interpolation='none', aspect='auto')
+
+plt.savefig("Plots/fig_with_heatmap_custom.png")
+plt.clf()
+
+Output: Plots/fig_with_heatmap_custom.png
+
+This program visualizes a heatmap of 5x5 matrix data x with coolwarm colormap and no interpolation with auto aspect ratio. This program saves the figure and clears the plot
