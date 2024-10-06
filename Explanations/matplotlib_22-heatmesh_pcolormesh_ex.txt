@@ -1,0 +1,42 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating non-linear data points x and y
+x = [1, 4, 13, 19, 32]
+y = [45, 69, 71, 72, 99]
+
+# Creating 5x5 matrix for data points z
+z = [
+    [1, 2, 3, 4, 5], 
+    [6, 7, 8, 9, 10], 
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25]
+]
+
+# Plotting the irregular data heatmap with colormap 'plasma'
+plt.pcolormesh(x, y, z, cmap='plasma')
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_pcolormesh.png")
+plt.clf()
+
+# Creating data points x and y
+x = np.arange(0, 5, 1)
+y = np.arange(0, 5, 1)
+
+# Creating 5x5 matrix for random data points z
+z = np.random.rand(5, 5)
+
+# Plotting the irregular data heatmap with colormap 'viridis' and shading 'auto'.
+The edgecolor is set to 'black' and the linewidth is set to 1.
+plt.pcolormesh(x, y, z, cmap='viridis', shading='auto', edgecolor='black', linewidth=1)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_pcolormesh_custom.png")
+plt.clf()

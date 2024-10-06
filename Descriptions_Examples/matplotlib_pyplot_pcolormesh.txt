@@ -1,0 +1,54 @@
+pcolormesh of the matplotlib.pyplot library
+This function is used to plot the heatmap of data points
+
+This function is useful to plot irregular data points while providing more control
+
+Example:
+import matplotlib.pyplot as plt
+
+x = [1, 4, 13, 19, 32]
+y = [45, 69, 71, 72, 99]
+
+z = [
+    [6, 7, 8, 9, 10], 
+    [16, 17, 18, 19, 20],
+    [1, 2, 3, 4, 5], 
+    [21, 22, 23, 24, 25],
+    [11, 12, 13, 14, 15]
+]
+
+plt.pcolormesh(x, y, z, cmap='plasma')
+
+plt.savefig("Plots/fig_with_pcolormesh.png")
+plt.clf()
+
+Output: Plots/fig_with_pcolormesh.png
+
+This program creates the corners of the grid with x and y. The non-linear data points z are plotted in the heatmap grid.
+The colormap is 'plasma'. This program saves the figure and clears the plot
+
+The cmap parameter defines the colormap to use
+The shading parameter defines the shading to use
+The edgecolor parameter defines the color of the edges of the grid
+The linewidth parameter defines the width of the edges of the grid
+The antialiased parameter defines whether the grid is antialiased
+
+Example:
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0, 5, 1)
+y = np.arange(0, 5, 1)
+
+z = np.random.rand(5, 5)
+
+plt.pcolormesh(x, y, z, cmap='viridis', shading='auto', edgecolor='black', linewidth=1, antialiased=True)
+
+plt.savefig("Plots/fig_with_pcolormesh_custom.png")
+plt.clf()
+
+Output: Plots/fig_with_pcolormesh_custom.png
+
+This program creates the grid with x and y values. The random 5x5 matrix z is plotted in the heatmap grid.
+The colormap is 'viridis'. This program uses 'auto' shading. The color of the edges of the grid is 'black'.
+The width of the edges of the grid is 1. The grid is antialiased. This program saves the figure and clears the plot
