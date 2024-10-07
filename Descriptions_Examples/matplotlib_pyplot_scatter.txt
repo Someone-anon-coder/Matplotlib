@@ -33,3 +33,22 @@ plt.savefig("Plots/scatter.png")
 Output: Plots/scatter.png
 
 This program create data points x and y and plots them with size of 100 and red color and shown with 'o' marker and transparency of 0.5
+
+The parameter cmap is used to define the colormap
+
+Example: 
+x = np.random.rand(100)
+y = np.random.rand(100)
+z = np.random.rand(100)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.scatter(x, y, z, c=z, cmap='coolwarm')
+
+plt.savefig("Plots/3d_scatter_plot.png")
+plt.clf()
+
+Output: Plots/3d_scatter_plot.png
+
+This program creates three axis randomized data with 100 elements. The data is plotted in subplot with '3d' projection and colormap 'coolwarm'. This program saves the figure and clears the plot

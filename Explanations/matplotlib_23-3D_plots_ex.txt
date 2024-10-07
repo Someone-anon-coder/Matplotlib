@@ -1,0 +1,71 @@
+# First part
+
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Import numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating a figure object for plot manipulation and Adding a subplot to the figure object with '3d' projection of the plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Creating a linear array x and y starting from -10 to 10 with 100 elements
+x = np.linspace(-10, 10, 100)
+y = np.linspace(-10, 10, 100)
+
+# Creating coordinate arrays for the vectors x and y
+X, Y = np.meshgrid(x, y)
+
+# Creating a 3D surface plot of the function sin(sqrt(x^2 + y^2)) as Z
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+# Plotting the surface plot with a colormap of 'viridis'
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+# Saving the figure and clearing the current figure
+plt.savefig("Plots/3d_plot.png")
+plt.clf()
+
+# Second part
+
+# Creating randomized data for x, y, and z of 100 elements
+x = np.random.rand(100)
+y = np.random.rand(100)
+z = np.random.rand(100)
+
+# Creating a figure object and adding a subplot with '3d' projection of the plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plotting scatter plot with color mapped to z values using a colormap of 'coolwarm'
+ax.scatter(x, y, z, c=z, cmap='coolwarm')
+
+# Saving the figure and clearing the current figure
+plt.savefig("Plots/3d_scatter_plot.png")
+plt.clf()
+
+# Third part
+
+# Creating a linear array x and y starting from -5 to 5 with 50 elements
+x = np.linspace(-5, 5, 50)
+y = np.linspace(-5, 5, 50)
+
+# Creating coordinate arrays for the vectors x and y
+X, Y = np.meshgrid(x, y)
+
+# Creating a 3D wireframe plot of the function sin(sqrt(x^2 + y^2)) as Z
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+# Creating a figure object and adding a subplot with '3d' projection of the plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# Plotting the wireframe plot with a color of 'blue'
+ax.plot_wireframe(X, Y, Z, color='blue')
+
+# Saving the figure and clearing the current figure
+plt.savefig("Plots/3d_wireframe_plot.png")
+plt.clf()

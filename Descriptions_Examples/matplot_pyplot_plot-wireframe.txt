@@ -1,0 +1,25 @@
+The plot_wireframe function of the matplotlib.pyplot module.
+This function is used to plot 3D wireframes.
+
+This function is useful to plot data to visualize edges of the functions but not the data respresenting the surface
+
+Example:
+x = np.linspace(-5, 5, 50)
+y = np.linspace(-5, 5, 50)
+
+X, Y = np.meshgrid(x, y)
+
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+ax.plot_wireframe(X, Y, Z, color='blue')
+
+plt.savefig("Plots/3d_wireframe_plot.png")
+plt.clf()
+
+Output: Plots/3d_wireframe_plot.png
+
+This program creates arrays with x and y with data between -5 and 5 with 50 elements. This program plots the data in a subplot with '3d' projection.
+This data is plotted as a wireframe with 'blue' color. This program saves the figure and clears the figure

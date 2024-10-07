@@ -1,0 +1,27 @@
+The plot_surface function of the matplotlib.pyplot module.
+This function is used to plot 3D surfaces.
+
+This function is useful to plot data to visualize functions of two variables
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+x = np.linspace(-10, 10, 100)
+y = np.linspace(-10, 10, 100)
+
+X, Y = np.meshgrid(x, y)
+
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+ax.plot_surface(X, Y, Z, cmap='viridis')
+
+plt.savefig("Plots/3d_surface_plot.png")
+plt.clf()
+
+Output: Plots/3d_surface_plot.png
+
+This program creates a plot of 3D surface to respresent data values X and Y. This program saves the figure and clears the figure
