@@ -30,3 +30,25 @@ plt.savefig("Plots/figure.png")
 
 In this program a figure of 8 by 6 size and a grid with 2 rows and 2 rows is created. The first plot is plotted on the entire 1st row.
 The second plot is plotted on the second row first coloum and third plot on second row second coloum and figure is saved
+
+The parameter polar is used to define whether to use polar coordinates or cartesian coordinates
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+y = np.linspace(0, 5, 10)
+
+fig = plt.figure()
+
+ax = fig.add_subplot(111, polar=True)
+ax.plot(x, y)
+
+plt.savefig("Plots/fig_with_polar_plot.png")
+plt.clf()
+
+# Output: Plots/fig_with_polar_plot.png
+
+This program creates linear data x from 0 to 10 and y from 0 to 5 with 10 elements. The program plots the data in polar coordinates.
+The program saves the figure and clears the plot

@@ -1,0 +1,46 @@
+# Importing matplotlib.pyplot as plt
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating linear data points x from 0 to 10
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Creating linear data points y from 0 to 5 with 10 elements
+y = np.linspace(0, 5, 10)
+
+# Creating a figure object
+fig = plt.figure()
+
+# Adding a subplot to the figure with polar plot
+ax = fig.add_subplot(111, polar=True)
+
+# Plotting the data points x and y
+ax.plot(x, y)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_polar_plot.png")
+plt.clf()
+
+# Creating linear data points x from 0 to 2*pi with 100 elements
+theta = np.linspace(0, 2 * np.pi, 100)
+
+# Creating linear data points y with sin of x as 2*theta and getting only absolute values
+radius = np.abs(np.sin(2 * theta))
+
+# Creating a figure object
+fig = plt.figure()
+
+# Adding a subplot to the figure with polar plot
+ax = fig.add_subplot(111, polar=True)
+
+# Plotting the data points theta and radius
+# Plotting plot with 'blue' color and linestyle as '--' and linewidth as 2
+ax.plot(theta, radius, color='b', linestyle='--', linewidth=2)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_polar_plot_custom.png")
+plt.clf()
