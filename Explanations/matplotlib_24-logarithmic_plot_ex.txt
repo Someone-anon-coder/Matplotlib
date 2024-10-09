@@ -1,0 +1,49 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating evenly spaced data points on a logarithmic scale with 100 points
+x = np.logspace(0, 3, 100)
+
+# Creating data points y with function square root of 'x'
+y = np.sqrt(x)
+
+# Plotting the logarithmic data points x with linear data points y.
+# The plot is shown with 's' marker and size 5
+plt.semilogx(x, y, marker='s', markersize=5)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_semilogx.png")
+plt.clf()
+
+# Creating evenly spaced data points between 0 and 10 with 50 points
+x = np.linspace(0, 10, 50)
+
+# Creating data points y with function exponential of 'x'
+y = np.exp(x)
+
+# Plotting the linear data points x with logarithmic data points y.
+# The plot is shown with 'o' marker and size 5
+plt.semilogy(x, y, marker='o', markersize=5)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_semilogy.png")
+plt.clf()
+
+# Creating logarithmically spaced data points between 0 and 5 with 100 points for x.
+# Creating logarithmically spaced data points between 0 and 3 with 100 points for y.
+x = np.logspace(0, 5, 100)
+y = np.logspace(0, 3, 100)
+
+# Plotting logarithmic data x and y with 'x' marker and size 5.
+# This plots both logarithmic data points.
+# The data is plotted with line style '--' and color red.
+plt.loglog(x, y, marker='x', markersize=5, linestyle='--', color='red')
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_loglog.png")
+plt.clf()

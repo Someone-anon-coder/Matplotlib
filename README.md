@@ -2,7 +2,6 @@
 
 This repository is designed to track my progress with Matplotlib, a powerful plotting library in Python.
 The main purpose is to practice and understand how to create visualizations using Matplotlib, save them as image files, and document each step of the learning process.
-The programs i am writing is based on the information i get from official website of matplotlib: <https://matplotlib.org>
 
 ## Basic Example Code
 
