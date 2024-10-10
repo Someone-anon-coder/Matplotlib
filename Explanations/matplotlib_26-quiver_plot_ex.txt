@@ -1,0 +1,45 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating linear data points x from 1 to 10
+x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Creating linear data points y as function of reverse of x
+y = x[::-1]
+
+# Getting a tuple of coordinate vector to create vector field
+X, Y = np.meshgrid(x, y)
+
+# Components of vector field U as negative Y and V as X
+U = -Y
+V = X
+
+# Plotting vector field with X, Y, U and V
+plt.quiver(x, y, U, V)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/quiver_plot.png")
+plt.clf()
+
+# Creating linear data points x and y from 1 to 10 with 20 elements
+x = np.linspace(1, 10, 20)
+y = np.linspace(1, 10, 20)
+
+# Getting a tuple of coordinate vector to create vector field
+X, Y = np.meshgrid(x, y)
+
+# Components of vector field U as sin(X) * cos(Y) and V as cos(X) * sin(Y)
+U = np.sin(X) * np.cos(Y)
+V = np.cos(X) * np.sin(Y)
+
+# Plotting vector field with X, Y, U and V and 'red' color
+plt.quiver(X, Y, U, V, color='r')
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/quiver_plot_meshgrid.png")
+plt.clf()
