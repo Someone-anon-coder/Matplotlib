@@ -1,0 +1,77 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating linear data points x from 0 to 2*pi with 200 points
+x = np.linspace(0, 2*np.pi, 200)
+
+# Creating data points y as function 'sin(x)'
+y = np.sin(x)
+
+# Plotting figure with size 10x6 and datapoints x and y
+plt.figure(figsize=(10, 6))
+plt.plot(x, y)
+
+# Plotting text on the figure at middle location of x list and y list
+# Plotting "Sine Wave" as the text with '12' fontsize and 'red' color with 'bold' font
+# Creating bounding box with 'yellow' color and transparency of '0.5' with padding of '5'
+plt.text(
+    x[int(len(x)/2) - 1], 
+    y[int(len(y)/2) - 1], 
+    "Sine Wave", 
+    fontsize=12, 
+    color='red', 
+    fontweight='bold', 
+    bbox = {
+        'facecolor': 'yellow', 
+        'alpha': 0.5, 
+        'pad': 5
+    }
+)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_text.png")
+plt.clf()
+
+# Plotting figure with size 10x6 and datapoints x and y for annotations
+plt.figure(figsize=(10, 6))
+plt.plot(x, y)
+
+# Plotting annotation 'Maximum Point' and 'Minumum Point' on the sine wave.
+# Plotting 'maximum point' at half of 'PI' and y as '1'
+# Plotting 'minimum point' at 3rd quarter of 'PI' and y as '-1'
+# Drawing arrows to point towards 'maximum point' and 'minimum point'
+# Annotating Maximum points with '12' fontsize and 'green' color
+# Annotating Minimum points with '12' fontsize and 'blue' color
+plt.annotate(
+    'Maximum Point', 
+    xy=(np.pi/2, 1), 
+    xytext=(np.pi/2 + 0.5, 0.8), 
+    arrowprops=dict(
+        facecolor='black', 
+        shrink=0.05, width=2
+    ),
+    fontsize=12, 
+    color='green'
+)
+
+plt.annotate(
+    'Minimum Point', 
+    xy=(np.pi + np.pi/2, -1), 
+    xytext=(np.pi + 0.5, -0.8), 
+    arrowprops=dict(
+        facecolor='black', 
+        shrink=0.05, 
+        width=2
+    ), 
+    fontsize=12, 
+    color='blue'
+)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_annotation.png")
+plt.clf()

@@ -1,0 +1,55 @@
+annotate function of the matplotlib.pyplot module
+This function is used to annotate specific points in the plot
+
+This function is useful to emphasize various data points in the plot.
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2*np.pi, 200)
+y = np.sin(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y)
+
+plt.annotate(
+    'Maximum Point', 
+    xy=(np.pi/2, 1), 
+    xytext=(np.pi/2 + 0.5, 0.8), 
+    arrowprops=dict(
+        facecolor='black', 
+        shrink=0.05, width=2
+    ),
+    fontsize=12, 
+    color='green'
+)
+
+plt.annotate(
+    'Minimum Point', 
+    xy=(np.pi + np.pi/2, -1), 
+    xytext=(np.pi + 0.5, -0.8), 
+    arrowprops=dict(
+        facecolor='black', 
+        shrink=0.05, 
+        width=2
+    ), 
+    fontsize=12, 
+    color='blue'
+)
+
+plt.savefig("Plots/fig_with_annotation.png")
+plt.clf()
+
+Output: Plots/fig_with_annotation.png
+
+This program plots annotation 'Maximum Point' and 'Minumum Point' on the sine wave.
+This program plots 'maximum point' at half of 'PI' and y as '1'
+This program plots 'minimum point' at 3rd quarter of 'PI' and y as '-1'
+Drawing arrows to point towards 'maximum point' and 'minimum point'
+Annotating Maximum points with '12' fontsize and 'green' color
+Annotating Minimum points with '12' fontsize and 'blue' color
+This program saves the figure and clears the plot.
+
+The parameter xytext defines the location of the annotation on the plot
+The parameter arrowprops defines the arrow to point towards the data point

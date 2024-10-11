@@ -1,0 +1,40 @@
+text function of the matplotlib.pyplot module
+This function is used to write text on the graph
+
+This function is useful to write text at specific points in the graph with bounding box
+
+Example:
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 2*np.pi, 200)
+y = np.sin(x)
+
+plt.figure(figsize=(10, 6))
+plt.plot(x, y)
+
+plt.text(
+    x[int(len(x)/2) - 1], 
+    y[int(len(y)/2) - 1], 
+    "Sine Wave", 
+    fontsize=12, 
+    color='red', 
+    fontweight='bold', 
+    bbox = {
+        'facecolor': 'yellow', 
+        'alpha': 0.5, 
+        'pad': 5
+    }
+)
+
+plt.savefig("Plots/fig_with_text.png")
+plt.clf()
+
+Output: Plots/fig_with_text.png
+
+This program plots figure with x and y data points. 
+This program write text 'Sine Wave' on the plot at middle index in x data points and y data points.
+This program writes text with 'red' color, '12' fontsize and 'bold' font.
+This program creates bounding box with 'yellow' color and transparency of '0.5' with padding of '5'
+
+The parameter bbox defines the bounding box to be drawn around the text
