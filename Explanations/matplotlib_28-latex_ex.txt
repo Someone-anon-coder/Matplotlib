@@ -1,0 +1,36 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating linear data points x from 0 to 2*pi with 100 elements
+x = np.linspace(0, 2*np.pi, 100)
+
+# Creating y as function of sin(x)
+y = np.sin(x)
+
+# Plotting data points x and y
+plt.plot(x, y)
+
+# Plotting latex text on the plot at '(np.pi, y[int(len(y)/2) - 1])'
+plt.text(np.pi, y[int(len(y)/2) - 1], r'$\sin(x)$')
+
+# Saving the figure and clearing the plot
+plt.savefig('Plots/fig_with_latex.png')
+plt.clf()
+
+# Plotting data points x and y
+plt.plot(x, y)
+
+# Plotting random latex text at different points
+plt.text(1, 0.50, r'$E = mc^2$')
+plt.text(1, 0, r'$\frac{d}{dx}e^x = e^x$')
+plt.text(4, 0.50, r'$\sum_{i=1}^n i = \frac{n(n + 1)}{2}$')
+plt.text(4, 0, r'$\int_0^\infty e^{-x^2}dx = \frac{\sqrt{\pi}}{2}$')
+
+# Saving the figure and clearing the plot
+plt.savefig('Plots/fig_with_latex_text.png')
+plt.clf()
