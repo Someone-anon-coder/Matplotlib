@@ -1,0 +1,33 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Creating linear data points from 0 to 10 with 100 elements
+x = np.linspace(0, 10, 100)
+
+# Creating y1 and y2 as function of sin(x) and cos(x)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Creating a figure object with size 10x6
+plt.figure(figsize=(10, 6))
+
+# Creating lines line1 and line2 for sine and cosine wave
+# Creating lines with 'blue' and 'green' colors
+line1, = plt.plot(x, y1, label='Sine Wave', color='blue', linestyle='--', linewidth=2)
+line2, = plt.plot(x, y2, label='Cosine Wave', color='green', linestyle='-', linewidth=2)
+
+# Creating legend for the lines
+# Creating legend at 'upper right' location with fontsize '12' with a shadow
+plt.legend(loc='upper right', fontsize=12, title='Legend Title', title_fontsize='13', shadow=True)
+
+# Setting a tight layout to properly arrange plot and legend
+plt.tight_layout()
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_legend.png")
+plt.clf()
