@@ -1,0 +1,50 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Getting a list of available pre-defined styles
+print(plt.style.available)
+
+# Creating linear data points x from 0 to 10 with 100 points
+x = np.linspace(0, 10, 100)
+
+# Creating data points y1 and y2 as function of sin(x) and cos(x)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# Using pre-defined style 'ggplot'
+plt.style.use('ggplot')
+
+# Plotting the data points with label and 2 linewidth
+plt.plot(x, y1, label='Sine Wave', color='blue', linestyle='--', linewidth=2)
+plt.plot(x, y2, label='Cosine Wave', color='green', linestyle='-', linewidth=2)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_style_ggplot.png")
+plt.clf()
+
+# Using pre-defined style 'classic'
+plt.style.use('classic')
+
+# Plotting the data points with label 'Sine Wave' and 'Cosine Wave'
+plt.plot(x, y1, label='Sine Wave', color='blue', linestyle='--', linewidth=2)
+plt.plot(x, y2, label='Cosine Wave', color='green', linestyle='-', linewidth=2)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_style_classic.png")
+plt.clf()
+
+# Using pre-defined style 'dark_background'
+plt.style.use('dark_background')
+
+# Plotting the data points with label and 2 linewidth
+plt.plot(x, y1, label='Sine Wave', color='blue', linestyle='--', linewidth=2)
+plt.plot(x, y2, label='Cosine Wave', color='green', linestyle='-', linewidth=2)
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_style_dark-background.png")
+plt.clf()

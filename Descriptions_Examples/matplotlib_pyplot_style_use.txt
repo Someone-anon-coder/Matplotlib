@@ -1,0 +1,26 @@
+use function of the matplotlib.pyplot.style module
+This function is used to set the available predefined style for the plot
+
+This function is useful for giving the plots a different look and style
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+plt.style.use('ggplot')
+
+plt.plot(x, y1, label='Sine Wave', color='blue', linestyle='--', linewidth=2)
+plt.plot(x, y2, label='Cosine Wave', color='green', linestyle='-', linewidth=2)
+
+plt.savefig('Plots/fig_with_style.png')
+plt.clf()
+
+Output: Plots/fig_with_style.png
+
+This program plots sine and cosine wave on the plot.
+This program sets the predefined style for the plot as 'ggplot'
+This program saves the figure and clears the plot
