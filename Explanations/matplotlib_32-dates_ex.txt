@@ -1,0 +1,50 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Importing datetime, timedelta from datetime
+from datetime import datetime, timedelta
+
+# Creating linear data points dates with datetime + timedelta with 5 values
+dates = [datetime(2024, 10, 14) + timedelta(days=i) for i in range(5)]
+
+# Creating random values for dates
+values = [5, 7, 8, 6, 7]
+
+# Plotting data points
+plt.plot(dates, values)
+
+# Adjusting aspect ratio to display plot concisly
+plt.tight_layout()
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_dates.png")
+plt.clf()
+
+# Importing matplotlib.dates
+# Saving it in the memory as mdates
+import matplotlib.dates as mdates
+
+# Creating a new figure and axis
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plotting data on new axis
+ax.plot(dates, values)
+
+# Setting major locator and formatter for x-axis
+ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d, %Y'))
+
+# Rotating data labels for readability
+plt.gcf().autofmt_xdate()
+
+# Adjusting aspect ratio to display plot concisly
+plt.tight_layout()
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_dates_custom.png")
+plt.clf()

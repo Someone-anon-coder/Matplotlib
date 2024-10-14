@@ -1,0 +1,34 @@
+autofmt_xdate() function of the matplotlib.pyplot.gcf module
+This function is used to rotate the dates
+
+This function is useful to rotate date labels for better readability
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+from datetime import datetime, timedelta
+
+dates = [datetime(2024, 10, 14) + timedelta(days=i) for i in range(5)]
+values = [5, 7, 8, 6, 7]
+
+import matplotlib.dates as mdates
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(dates, values)
+
+ax.xaxis.set_major_locator(mdates.AutoDateLocator())
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d, %Y'))
+
+plt.gcf().autofmt_xdate()
+
+plt.tight_layout()
+plt.savefig("Plots/fig_with_dates_custom.png")
+plt.clf()
+
+Output: Plots/fig_with_dates_custom.png
+
+This program plots dates and values with datetime and timedelta.
+The program date labels are rotated for better readability
+The program sets tight aspect ratio for plotting consizely
+The program saves the figure and clears the plot
