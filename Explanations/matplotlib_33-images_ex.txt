@@ -1,0 +1,60 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Generating random data between 0 and 1
+image_data = np.random.rand(10, 10)
+
+# Plotting the image data with a 'viridis' colormap
+plt.imshow(image_data, cmap='viridis')
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_image.png")
+plt.clf()
+
+# Creating linear data points x and y from -3 to 3 with 100 points
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+
+# Creating a meshgrid from x and y
+X, Y = np.meshgrid(x, y)
+
+# Calculating the function Z = sin(x^2 + y^2)
+Z = np.sin(X**2 + Y**2)
+
+# Plotting the image data with a 'coolwarm' colormap
+# Origin it set to 'lower' with a extent of [-3, 3, -3, 3]
+plt.imshow(Z, extent=[-3, 3, -3, 3], origin='lower', cmap='coolwarm')
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_image_meshgrid.png")
+plt.clf()
+
+# Generating random data between 0 and 1
+data = np.random.rand(10, 10)
+
+# Creating a figure with 3 subplots
+fig, ax = plt.subplots(1, 3, figsize=(15, 5))
+
+# Plotting the data with 'gray' colormap on first subplot with title 'Gray Colormap'
+ax[0].imshow(data, cmap='gray')
+ax[0].set_title('Gray Colormap')
+
+# Plotting the data with 'hot' colormap on second subplot with title 'Hot Colormap'
+ax[1].imshow(data, cmap='hot')
+ax[1].set_title('Hot Colormap')
+
+# Plotting the data with 'coolwarm' colormap on third subplot with title 'Coolwarm Colormap'
+ax[2].imshow(data, cmap='coolwarm')
+ax[2].set_title('Coolwarm Colormap')
+
+# Adjusting the spacing between subplots
+plt.tight_layout()
+
+# Saving the figure and clearing the plot
+plt.savefig("Plots/fig_with_image_subplots.png")
+plt.clf()

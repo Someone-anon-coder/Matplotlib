@@ -1,0 +1,47 @@
+imshow function of the matplotlib.pyplot module
+This function is used to show images in matplotlib
+
+This function is useful to work with image data with capabailities of matplotlib
+
+Example:
+import matplotlib.pyplot as plt
+import numpy as np
+
+image_data = np.random.rand(10, 10)
+
+plt.imshow(image_data, cmap='viridis')
+
+plt.savefig("Plots/fig_with_image.png")
+plt.clf()
+
+Output: Plots/fig_with_image.png
+
+This program creates a random image data and shows image with 'viridis' colormap.
+This program saves the figure and clears the plot
+
+The extent parameter defines the range of x axis and y axis values
+The origin parameter defines the origin of the image
+The cmap parameter defines the colormap of the image
+
+Example: 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-3, 3, 100)
+y = np.linspace(-3, 3, 100)
+
+X, Y = np.meshgrid(x, y)
+
+Z = np.sin(X**2 + Y**2)
+
+plt.imshow(Z, extent=[-3, 3, -3, 3], origin='lower', cmap='coolwarm')
+
+plt.savefig("Plots/fig_with_image_meshgrid.png")
+plt.clf()
+
+Output: Plots/fig_with_image_meshgrid.png
+
+This program creates x and y data points and creates a meshgrid of values.
+This program creates a sin function of 'X^2 + Y^2'.
+This program shows image 'Z' with range -3 to 3.
+This program saves the figure and clears the plot
