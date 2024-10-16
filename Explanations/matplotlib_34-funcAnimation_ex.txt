@@ -1,0 +1,47 @@
+# Importing matplotlib.pyplot
+# Saving it in the memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in the memory as np
+import numpy as np
+
+# Importing FuncAnimation from matplotlib.animation
+from matplotlib.animation import FuncAnimation
+
+# Creating subplots
+fig, ax = plt.subplots()
+
+# Creating empty arrays for x and y
+xdata, ydata = [], []
+
+# Plotting empty arrays with animation
+line, = plt.plot([], [], 'ro-', animated=True)
+
+# Creating a function to set x-axis limits and y-axis limits then return line
+def init():
+    ax.set_xlim(0, 2 * np.pi)
+    ax.set_ylim(-1, 1)
+    return line,
+
+# Creating a function to append points and sin function of points to x and y arrays and setting line data to be x and y arrays.
+Returning line
+def update(frame):
+    xdata.append(frame)
+    ydata.append(np.sin(frame))
+    line.set_data(xdata, ydata)
+    return line,
+
+# Ruuning FuncAnimation to call update function on fig object
+# Creating linear data points from 0 to 2*pi with 128 elements
+# Setting blit as 'True' to draw accroding to z order
+ani = FuncAnimation(
+    fig, 
+    update, 
+    frames=np.linspace(0, 2 * np.pi, 128),
+    init_func=init, blit=True
+)
+
+# Displating the figure and clearing the plot
+plt.show()
+plt.clf()
