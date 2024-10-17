@@ -1,0 +1,45 @@
+# Importing matplotlib.pyplot
+# Saving it in memory as plt
+import matplotlib.pyplot as plt
+
+# Importing numpy
+# Saving it in memory as np
+import numpy as np
+
+# Importing Slider from matplotlib.widgets
+from matplotlib.widgets import Slider
+
+# Creating a figure and an axis
+fig, ax = plt.subplots()
+
+# Adjusting x and y axis boundary for better readability
+plt.subplots_adjust(left=0.1, bottom=0.25)
+
+# Creating linear data points x from 0 to 2*pi with 1000 points
+x = np.linspace(0, 2 * np.pi, 1000)
+
+# Setting starting points for the slider
+initial_frequency = 1
+
+# Creating data points y as function of sin 'initial_frequency * x'
+y = np.sin(initial_frequency * x)
+
+# Plotting the line with linewidth 2
+line, = plt.plot(x, y, lw=2)
+
+# Creating a slider for the frequency
+ax_slider = plt.axes([0.1, 0.1, 0.65, 0.03])
+frequency_slider = Slider(ax_slider, 'Frequency', 0.1, 5.0, valinit=initial_frequency)
+
+# Creating a function to update the line with the new frequency
+def update(val):
+    frequency = frequency_slider.val
+    line.set_ydata(np.sin(frequency * x))
+    fig.canvas.draw_idle()
+
+# Connecting the slider to the update function
+frequency_slider.on_changed(update)
+
+# Showing the plot and clearing the plot
+plt.show()
+plt.clf()
