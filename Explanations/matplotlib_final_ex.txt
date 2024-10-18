@@ -1,0 +1,184 @@
+# Importing pandas and matplotlib libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Creating a DataFrame from the CSV file
+df = pd.read_csv('Dataset/data.csv')
+
+# Displaying information about the dataset
+print("Information About Dataset: \n")
+print(f"Dataset Head: {df.head()}\n")
+print(f"Dataset Tail: {df.tail()}\n")
+print(f"Dataset Shape: {df.shape}\n")
+print(f"Dataset Columns: {df.columns}\n")
+print(f"Dataset Index: {df.index}\n")
+print(f"Dataset Info: {df.info()}\n")
+print(f"Dataset Describe: {df.describe()}\n")
+print(f"Dataset Null Values: {df.isnull().sum()}\n")
+print(f"Dataset Duplicates: {df.duplicated().sum()}\n")
+print(f"Dataset Correlation: {df.corr()}\n")
+print(f"Dataset Sample: {df.sample(5)}\n")
+
+# Creating a new column 'Date' by combining 'Year' and 'Month'
+df['Year'] = df['Date'] // 100
+df['Month'] = df['Date'] % 100
+
+# Converting 'Year' and 'Month' to datetime format
+df['Date'] = pd.to_datetime(df['Year'].astype(str) + '-' + df['Month'].astype(str) + '-01')
+
+# Dropping the original 'Year' and 'Month' columns. Uncomment the line below if you want to drop the original columns.
+# df.drop(columns=['Year', 'Month'], inplace=True)
+
+# Displaying the updated DataFrame
+print(df.head())
+
+
+# Plotting the first plot - Line Plotting
+
+# Creating figure with size 12x6
+plt.figure(figsize=(12, 6))
+
+# Plotting the line plot with 'Date' on the x-axis and 'Anomaly' on the y-axis
+plt.plot(df['Date'], df['Anomaly'], color='red', linewidth=1.5)
+
+# Adding title and labels to the plot
+plt.title('Global Temperature Anomalies (1880 - 2024)', fontsize=16)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Temperature Anomaly (°C)', fontsize=12)
+
+# Adding grid lines to the plot
+plt.grid(True)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
+
+
+# Plotting the second plot - Scatter plot
+
+# Creating a figure with size 12x6
+plt.figure(figsize=(12, 6))
+
+# Creating a scatter plot with 'Date' on the x-axis and 'Anomaly' on the y-axis
+plt.scatter(df['Date'], df['Anomaly'], color='blue', alpha=0.6, edgecolor='k')
+
+# Adding title and labels to the plot
+plt.title('Scatter Plot of Global Temperature Anomalies (1880 - 2024)', fontsize=16)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Temperature Anomaly (°C)', fontsize=12)
+
+# Adding grid lines to the plot
+plt.grid(True)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
+
+
+# Plotting the third plot - Histogram plot
+
+# Creating a figure with size 12x6
+plt.figure(figsize=(12, 6))
+
+# Creating a histogram with 'Anomaly' values with 30 bins
+plt.hist(df['Anomaly'], bins=30, color='orange', edgecolor='black', alpha=0.7)
+
+# Adding title and labels to the plot
+plt.title('Histogram of Global Temperature Anomalies', fontsize=16)
+plt.xlabel('Temperature Anomaly (°C)', fontsize=12)
+plt.ylabel('Frequency', fontsize=12)
+
+# Adding grid lines to the plot only on the y-axis
+plt.grid(axis='y', alpha=0.75)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
+
+
+# Plotting the fourth plot - Box plot
+
+# Creating a figure with size 8x6
+plt.figure(figsize=(8, 6))
+
+# Creating a box plot with 'Anomaly' values and a vertical box style and a light blue face color
+plt.boxplot(df['Anomaly'], vert=True, patch_artist=True, boxprops=dict(facecolor='lightblue'))
+
+# Adding title and labels to the plot
+plt.title('Box Plot of Global Temperature Anomalies', fontsize=16)
+plt.ylabel('Temperature Anomaly (°C)', fontsize=12)
+
+# Adding grid lines to the plot only on the y-axis
+plt.grid(axis='y', alpha=0.75)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
+
+
+# Plotting the fifth plot - Heatmap plot
+
+# Importing seaborn library for heatmap
+import seaborn as sns
+
+# Creating a pivot table with 'Year' as rows, 'Month' as columns, and 'Anomaly' as values
+heatmap_data = df.pivot_table(values='Anomaly', index='Year', columns='Month')
+
+# Creating a figure with size 12x8
+plt.figure(figsize=(12, 8))
+
+# Creating a heatmap using seaborn with the pivot table data and a coolwarm colormap
+sns.heatmap(heatmap_data, cmap='coolwarm', annot=False, cbar_kws={'label': 'Temperature Anomaly (°C)'})
+
+# Adding title and labels to the plot
+plt.title('Heatmap of Global Temperature Anomalies (1880 - 2024)', fontsize=16)
+plt.xlabel('Month', fontsize=12)
+plt.ylabel('Year', fontsize=12)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
+
+
+# Plotting the sixth plot - Animated plot
+
+# Importing animation module from matplotlib
+import matplotlib.animation as animation
+
+# Creating a figure with size 12x6
+fig, ax = plt.subplots(figsize=(12, 6))
+
+# Creating a line object to plot the data on the figure
+line, = ax.plot([], [], color='red', linewidth=2)
+
+# Setting the x-axis and y-axis limits
+ax.set_xlim(df['Date'].min(), df['Date'].max())
+ax.set_ylim(df['Anomaly'].min() - 0.5, df['Anomaly'].max() + 0.5)
+
+# Adding title, labels, and grid lines to the plot
+ax.set_title('Animated Global Temperature Anomalies (1880 - 2024)', fontsize=16)
+ax.set_xlabel('Year', fontsize=12)
+ax.set_ylabel('Temperature Anomaly (°C)', fontsize=12)
+ax.grid(True)
+
+# Function to initialize the plot
+def init():
+    line.set_data([], [])
+    return line,
+
+# Function to update the plot for each frame
+def update(frame):
+    x = df['Date'][:frame]
+    y = df['Anomaly'][:frame]
+    
+    # Updating the line data with the current frame's data
+    line.set_data(x, y)
+    
+    return line,
+
+# Creating the animation object with the update function and the frames from the DataFrame
+ani = animation.FuncAnimation(fig, update, frames=len(df), init_func=init, blit=True, interval=10)
+
+# Adjusting the layout to ensure proper spacing and visualization
+plt.tight_layout()
+plt.show()
